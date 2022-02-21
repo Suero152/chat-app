@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket Projeto</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<ul id="messages"></ul>
+<div id="pop-ups">
+    <div class="pop-up" id="nick">
+        <h3>What's your name?</h3>
+        <form id="nick-form" action="">
+            <input id="nick-input" autocomplete="off" maxlength="14" minlength="5" /><br><button>Join</button>
+        </form>
+    </div>
+    <div class="pop-up" id="cooldown">
+        <h3 id="pop-up-reason">Calm down, you're going too fast!</h3>
+        <button id="calm-button">I'm going to chill.</button>
+    </div>
+</div>
+<div id="notifications">
+
+</div>
+<p id="type-hint">NaN user is typing</p>
+<form id="form" action="">
+    <input id="input" autocomplete="off" maxlength="150" /><button>Send</button>
+</form>
+<script src="/js/client-script.js"></script>
+</body>
+
+</html>
