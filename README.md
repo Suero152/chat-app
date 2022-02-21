@@ -1,6 +1,6 @@
 # Chat App
 
-A chat application made with: <mark>Socket.IO</mark>, <mark>Node.JS</mark> and <mark>HTML</mark>.
+A chat application made with: **Socket.IO**, **Node.JS** and **HTML**.
 
 # How to use?
 
