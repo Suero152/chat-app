@@ -24,7 +24,6 @@ let flood = {
             flood.warnings[socket.id].warnings == undefined ? flood.warnings[socket.id].warnings = 0: flood.warnings[socket.id].warnings
             flood.warnings[socket.id].warnings += 1
             flood.floods[socket.id].count = 0
-            console.log(flood.floods, flood.warnings)
             if (flood.warnings[socket.id].warnings > 1){
                 socket.emit('kick', 'Flooding.')
             }

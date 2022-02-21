@@ -70,7 +70,6 @@ io.on('connection',(client)=>{
             })
         }
         deleteMessages(client_id)
-        console.log(serverMessages)
         io.emit('messages', serverMessages)
         if (usersTyping[client.id]){
             delete usersTyping[client.id]
@@ -81,4 +80,5 @@ io.on('connection',(client)=>{
 
 server.listen(3000, () => {
     console.log('listening on *:3000');
+    console.log('Visit localhost:3000/chat')
 });

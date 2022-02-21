@@ -27,7 +27,6 @@ form.addEventListener('submit', function(e) {
 nickForm.addEventListener('submit', function(e) {
     messages.style.display = 'block'
     e.preventDefault();
-    console.log(nickInput.value)
     socket.emit('join', nickInput.value)
     document.getElementById('pop-ups').style.display = 'none'
     document.getElementById('nick').style.display = 'none'
@@ -68,7 +67,6 @@ socket.on('join', (name)=>{
     let notification = document.createElement('div')
     notification.className = 'notification'
     document.getElementById('notifications').appendChild(notification)
-    console.log('name', name)
     notification.textContent = `${name} has joined the room.`
     notification.style.display = 'block'
     notification.style.opacity = '1'
