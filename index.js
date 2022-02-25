@@ -32,7 +32,8 @@ io.on('connection',(client)=>{
     })
 
         client.on('chat message', (msg) => {
-            if(flood.protect(io, client)) {
+            let response = flood.protect(io, client)
+            if(response) {
             if (msg.length <= 150 && msg.trim().length > 0 && usersNames[client.id]) {
                 serverMessages.push({author: client.id, message: `[${usersNames[client.id]}]: ${msg}`})
                 io.emit('chat message', `[${usersNames[client.id]}]: ${msg}`)

@@ -20,16 +20,16 @@ let flood = {
 
         //Disconnect the socket if he went over FLOOD_MAX in FLOOD_TIME
         if( flood.floods[socket.id].count > FLOOD_MAX){
-            flood.warnings[socket.id] === undefined ? flood.warnings[socket.id] = {}: flood.warnings[socket.id]
-            flood.warnings[socket.id].warnings == undefined ? flood.warnings[socket.id].warnings = 0: flood.warnings[socket.id].warnings
+            flood.warnings[socket.id] = flood.warnings[socket.id] || {}
+            flood.warnings[socket.id].warnings = flood.warnings[socket.id].warnings || 0
             flood.warnings[socket.id].warnings += 1
             flood.floods[socket.id].count = 0
             if (flood.warnings[socket.id].warnings > 1){
                 socket.emit('kick', 'Flooding.')
             }
-            return false;
+            return false
         }
-        return true;
+        return (0 || (flood.warnings[socket.id] ? flood.warnings[socket.id].warnings:false)) > 1 ? true: false || true
     }
 }
 

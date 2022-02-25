@@ -94,4 +94,5 @@ socket.on('kick', (reason)=>{
     document.getElementById('pop-ups').style.display = 'block'
     document.getElementById('cooldown').style.display = 'block'
     socket.emit('kick', socket.id)
+    socket.disconnect()
 })
