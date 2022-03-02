@@ -8,7 +8,7 @@ let flood = require('./public/js/anti-flood.js')
 let usersTyping = {}
 let usersNames = {}
 var path = require('path')
-const serverMessages = []
+let serverMessages = []
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -81,3 +81,8 @@ io.on('connection',(client)=>{
 
 server.listen(process.env.PORT || '3000', () => {
 });
+
+setInterval(()=>{
+    serverMessages = []
+    io.emit('messages', serverMessages)
+}, 36000000)
