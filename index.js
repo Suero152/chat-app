@@ -80,6 +80,4 @@ io.on('connection',(client)=>{
 })
 
 server.listen(process.env.PORT || '3000', () => {
-    console.log('listening on *:3000');
-    console.log('Visit localhost:3000/chat')
 });
