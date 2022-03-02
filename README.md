@@ -9,4 +9,4 @@ directory of the project) do "node index.js" and visit this URL "https://localho
 
 # Test it yourself
 
-Live Demo: **https://chat-app-tikko.herokuapp.com/chat**
+Live Demo: **https://chat-app-tikko.herokuapp.com**
