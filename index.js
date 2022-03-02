@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/chat', (req, res) => {
     res.sendFile(__dirname+'/public/screens/chat.html')
 });
+app.get('/', (req, res) => {
+    res.sendFile(__dirname+'/public/screens/index.html')
+});
 
 io.on('connection',(client)=>{
     let clientName

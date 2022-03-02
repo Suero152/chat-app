@@ -88,11 +88,11 @@ socket.on('calm request', ()=>{
 })
 
 socket.on('kick', (reason)=>{
+    socket.emit('kick', socket.id)
     messages.style.display = 'none'
     pop_up_reason.textContent = `You got kicked for the followed reason: ${reason}`
     calmButton.remove();form.remove();messages.remove();hint.remove()
     document.getElementById('pop-ups').style.display = 'block'
     document.getElementById('cooldown').style.display = 'block'
-    socket.emit('kick', socket.id)
     socket.disconnect()
 })
